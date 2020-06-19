@@ -2,7 +2,7 @@
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-7">
-              <h2 class="mb-0">Aparatur Desa</h2>
+              <h2 class="mb-0">Aparatur </h2>
               <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p> -->
             </div>
           </div>
@@ -14,7 +14,7 @@
       <div class="container">
         <a href="#">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
-        <span class="current">Aparatur Desa</span>
+        <span class="current">Aparatur</span>
       </div>
     </div>
     <div class="site-section">
@@ -22,7 +22,7 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-4 mb-5">
             <h2 class="section-title-underline mb-5">
-              <span>Aparatur Desa</span>
+              <span>Aparatur </span>
             </h2>
           </div>
         </div>
