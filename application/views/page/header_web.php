@@ -88,7 +88,7 @@
                   <a href="<?= base_url('web/informasi')?>" class="nav-link text-left">Berita</a>
                 </li>
                 <li  <?php if($this->uri->segment('2')=='aparat') echo "class='active'";?> >
-                  <a href="<?= base_url('web/aparat')?>" class="nav-link text-left">Aparatur Desa</a>
+                  <a href="<?= base_url('web/aparat')?>" class="nav-link text-left">Aparatur</a>
                 </li>
                 <li <?php if($this->uri->segment('2')=='contact_us') echo "class='active'";?> >
                     <a href="<?php echo base_url('web/contact_us')?>" class="nav-link text-left">Kontak Kami</a>
