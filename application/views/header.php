@@ -145,6 +145,18 @@
                   <li><a class="nav-link" href="<?php echo base_url('galeri')?>">Galeri</a></li>
                 </ul>
               </li> 
+
+              <li class="menu-header">Surat</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i> <span>Kelola Data Fiskal</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="<?php echo base_url('kategori_berita')?>">Data Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('berita')?>">Data Daerah</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('slider')?>">Surat Fiskal</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('galeri')?>">Cetak Surat Fiskal (Arsip)</a></li>
+                </ul>
+              </li> 
+
             </ul>
 
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
