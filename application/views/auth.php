@@ -25,8 +25,10 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand">
-            <h3 style="color:white;">Company Profile</h3>
-            <!-- <p style="color:white;">MAIN DEALER JAMBI</p> -->
+            <?php $log = $this->db->query("SELECT * FROM tentang_kami order by id DESC LIMIT 1")->row_array();?>
+              <img src="<?php echo base_url().'image/'.$log['logo']?>" alt="Image" class="img-fluid" width="70px" id="logo" height="70px" >
+            <h3 style="color:red;">Pemerintah Provinsi Jambi</h3>
+            <!-- <p style="color:white;">Badan Keuangan Daerah</p> -->
             </div>
 
             <div class="card card-primary">
@@ -37,7 +39,7 @@
                 <form accept-charset="UTF-8" role="form" class="form-signin">
                   <div class="form-group">
                     <label for="email">Username</label>
-                    <input id="email" type="text" class="form-control" name="username" tabindex="1" required autofocus>
+                    <input id="email" type="text" class="form-control" name="username" tabindex="1" required autocomplete="off">
                     <div class="invalid-feedback">
                       Please fill in your username 
                     </div>
@@ -77,7 +79,7 @@
               </div>
             </div>
             <div class="simple-footer">
-              Copyright &copy <?php echo date('Y')?> Allright reserved.
+              <!-- Copyright &copy <?php echo date('Y')?> Allright reserved. -->
             </div>
           </div>
         </div>

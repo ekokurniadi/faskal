@@ -89,7 +89,7 @@ class Surat_fiskal extends MY_Controller {
 				 $romawi = $this->getRomawi($bulan); 
                  $kodetampil = $batas." / ".$batas1." / FAD"." / ".$romawi." / ".$tahun;  //format kode
                  return $kodetampil;  
-   }
+        }
 
 	function getRomawi($bln){
         	switch ($bln){
@@ -215,7 +215,7 @@ class Surat_fiskal extends MY_Controller {
                         <tr>
                         <th>No</th>
                         <th>Tembusan</th>
-                        <th>Action</th>
+                       
                         </tr>
                     </thead>";
                      $id=$_GET['no_seri'];
@@ -226,7 +226,7 @@ class Surat_fiskal extends MY_Controller {
                          echo "<tbody><tr id='dataku$d->id'>
                                  <td>$no</td>
                                  <td>$d->tembusan</td>
-                                 <td><button type ='button' class='btn btn-icon btn-sm btn-danger' onClick='hapus($d->id)'><i class='fa fa-close'></i> Batal</td>
+                                
                               </tr>
                             </tbody>  ";
                          $no++;
@@ -278,7 +278,12 @@ class Surat_fiskal extends MY_Controller {
 	    'tanggal_swdkllj' => set_value('tanggal_swdkllj'),
 	    'tanggal_akhir_berlaku_swdkllj' => set_value('tanggal_akhir_berlaku_swdkllj'),
 	    'pejabat_uptd' => set_value('pejabat_uptd'),
-	    'pejabat_jasaraharja' => set_value('pejabat_jasaraharja'),
+        'pejabat_jasaraharja' => set_value('pejabat_jasaraharja'),
+        'pilih_merk'=>$this->db->query("select * from tipe_kendaraan")->result(),
+        'pilih_warna'=>$this->db->query("select * from warna")->result(),
+        'pilih_jenis'=>$this->db->query("select * from jenis_kendaraan")->result(),
+        'pilih_daerah'=>$this->db->query("select * from daerah")->result(),
+        'pilih_aparatur'=>$this->db->query("select * from aparatur")->result(),
 	);
 		$data['kode']=$this->kode();
 		$data['kode2']=$this->kode2();
@@ -359,10 +364,63 @@ class Surat_fiskal extends MY_Controller {
 		'tanggal_swdkllj' => set_value('tanggal_swdkllj', $row->tanggal_swdkllj),
 		'tanggal_akhir_berlaku_swdkllj' => set_value('tanggal_akhir_berlaku_swdkllj', $row->tanggal_akhir_berlaku_swdkllj),
 		'pejabat_uptd' => set_value('pejabat_uptd', $row->pejabat_uptd),
-		'pejabat_jasaraharja' => set_value('pejabat_jasaraharja', $row->pejabat_jasaraharja),
+        'pejabat_jasaraharja' => set_value('pejabat_jasaraharja', $row->pejabat_jasaraharja),
+        'pilih_merk'=>$this->db->query("select * from tipe_kendaraan")->result(),
+        'pilih_warna'=>$this->db->query("select * from warna")->result(),
+        'pilih_jenis'=>$this->db->query("select * from jenis_kendaraan")->result(),
+        'pilih_daerah'=>$this->db->query("select * from daerah")->result(),
+        'pilih_aparatur'=>$this->db->query("select * from aparatur")->result(),
 		);
             $this->load->view('header');
             $this->load->view('surat_fiskal_form', $data);
+            $this->load->view('footer');
+        } else {
+            $this->session->set_flashdata('message', 'Record Not Found');
+            redirect(site_url('surat_fiskal'));
+        }
+    }
+
+    public function detail($id) 
+    {
+        $row = $this->Surat_fiskal_model->get_by_id($id);
+
+        if ($row) {
+            $data = array(
+                'button' => 'Update',
+                'action' => site_url('surat_fiskal/update_action'),
+		'id' => set_value('id', $row->id),
+		'kode' => set_value('no_seri', $row->no_seri),
+		'kode2' => set_value('no_surat', $row->no_surat),
+		'nomor_polisi' => set_value('nomor_polisi', $row->nomor_polisi),
+		'nama_pemilik' => set_value('nama_pemilik', $row->nama_pemilik),
+		'alamat' => set_value('alamat', $row->alamat),
+		'merktype_kendaraan' => set_value('merktype_kendaraan', $row->merktype_kendaraan),
+		'tahuncc_kendaraan' => set_value('tahuncc_kendaraan', $row->tahuncc_kendaraan),
+		'warna_kendaraan' => set_value('warna_kendaraan', $row->warna_kendaraan),
+		'nomor_chasis' => set_value('nomor_chasis', $row->nomor_chasis),
+		'nomor_mesin' => set_value('nomor_mesin', $row->nomor_mesin),
+		'jenis' => set_value('jenis', $row->jenis),
+		'bbn_kb_sebesar' => set_value('bbn_kb_sebesar', $row->bbn_kb_sebesar),
+		'tanggal_bbn_kb' => set_value('tanggal_bbn_kb', $row->tanggal_bbn_kb),
+		'pkb_sebesar' => set_value('pkb_sebesar', $row->pkb_sebesar),
+		'tanggal_pkb' => set_value('tanggal_pkb', $row->tanggal_pkb),
+		'daerah_tujuan' => set_value('daerah_tujuan', $row->daerah_tujuan),
+		'untuk_atas_nama' => set_value('untuk_atas_nama', $row->untuk_atas_nama),
+		'alamat_pemilik' => set_value('alamat_pemilik', $row->alamat_pemilik),
+		'tanggal_surat' => set_value('tanggal_surat', $row->tanggal_surat),
+		'no_swdkllj' => set_value('no_swdkllj', $row->no_swdkllj),
+		'tanggal_swdkllj' => set_value('tanggal_swdkllj', $row->tanggal_swdkllj),
+		'tanggal_akhir_berlaku_swdkllj' => set_value('tanggal_akhir_berlaku_swdkllj', $row->tanggal_akhir_berlaku_swdkllj),
+		'pejabat_uptd' => set_value('pejabat_uptd', $row->pejabat_uptd),
+        'pejabat_jasaraharja' => set_value('pejabat_jasaraharja', $row->pejabat_jasaraharja),
+        'pilih_merk'=>$this->db->query("select * from tipe_kendaraan")->result(),
+        'pilih_warna'=>$this->db->query("select * from warna")->result(),
+        'pilih_jenis'=>$this->db->query("select * from jenis_kendaraan")->result(),
+        'pilih_daerah'=>$this->db->query("select * from daerah")->result(),
+        'pilih_aparatur'=>$this->db->query("select * from aparatur")->result(),
+		);
+            $this->load->view('header');
+            $this->load->view('surat_fiskal_detail', $data);
             $this->load->view('footer');
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');

@@ -12,7 +12,7 @@ function load_data_temp()
             var no_seri  =  $("#no_seri").val();
             $.ajax({
                 type:"GET",
-                url:"<?php echo base_url('surat_fiskal/load_temp')?>",
+                url:"<?php echo base_url('surat_fiskal/load_temp2')?>",
                 data:"no_seri="+no_seri,
                 success:function(hasilajax){
                     $('#list_ku').html(hasilajax);
@@ -124,7 +124,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Merk/Type Kendaraan <?php echo form_error('merktype_kendaraan') ?></label>
                 <div class="col-sm-12">
                   <select name="merktype_kendaraan" id="merktype_kendaraan" class="form-control">
-                  <option value="<?=$merktype_kendaraan?>"selected>Select an option</option>
+                  <option value="<?=$merktype_kendaraan?>"selected><?=$merktype_kendaraan?></option>
                   <?php foreach($pilih_merk as $merk):?>
                      <option value="<?=$merk->tipe_kendaraan?>"><?=$merk->tipe_kendaraan?></option>
                   <?php endforeach;?>
@@ -143,7 +143,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Warna Kendaraan <?php echo form_error('warna_kendaraan') ?></label>
                 <div class="col-sm-12">
                 <select name="warna_kendaraan" id="warna_kendaraan" class="form-control">
-                  <option value="<?=$warna_kendaraan?>"selected>Select an option</option>
+                  <option value="<?=$warna_kendaraan?>"selected><?=$warna_kendaraan?></option>
                   <?php foreach($pilih_warna as $warna):?>
                      <option value="<?=$warna->warna?>"><?=$warna->warna?></option>
                   <?php endforeach;?>
@@ -169,7 +169,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Jenis <?php echo form_error('jenis') ?></label>
                 <div class="col-sm-12">
                 <select name="jenis" id="jenis" class="form-control">
-                  <option value="<?=$jenis?>"selected>Select an option</option>
+                  <option value="<?=$jenis?>"selected><?=$jenis?></option>
                   <?php foreach($pilih_jenis as $j):?>
                      <option value="<?=$j->jenis_kendaraan?>"><?=$j->jenis_kendaraan?></option>
                   <?php endforeach;?>
@@ -209,7 +209,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Daerah Tujuan <?php echo form_error('daerah_tujuan') ?></label>
                 <div class="col-sm-12">
                 <select name="daerah_tujuan" id="daerah_tujuan" class="form-control">
-                  <option value="<?=$daerah_tujuan?>"selected>Select an option</option>
+                  <option value="<?=$daerah_tujuan?>"selected><?=$daerah_tujuan?></option>
                   <?php foreach($pilih_daerah as $daerah):?>
                      <option value="<?=$daerah->kabupaten?>"><?=$daerah->kabupaten?></option>
                   <?php endforeach;?>
@@ -263,7 +263,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Pejabat Uptd <?php echo form_error('pejabat_uptd') ?></label>
                 <div class="col-sm-12">
                 <select name="pejabat_uptd" id="pejabat_uptd" class="form-control">
-                  <option value="<?=$pejabat_uptd?>"selected>Select an option</option>
+                  <option value="<?=$pejabat_uptd?>"selected><?=$pejabat_uptd?></option>
                   <?php foreach($pilih_aparatur as $aparat):?>
                      <option value="<?=$aparat->nama?>"><?=$aparat->nip?> | <?=$aparat->nama?></option>
                   <?php endforeach;?>
@@ -275,7 +275,7 @@ function load_data_temp()
                 <label class="col-sm-2 control-label" for="varchar">Pejabat Jasaraharja <?php echo form_error('pejabat_jasaraharja') ?></label>
                 <div class="col-sm-12">
                 <select name="pejabat_jasaraharja" id="pejabat_jasaraharja" class="form-control">
-                  <option value="<?=$pejabat_jasaraharja?>"selected>Select an option</option>
+                  <option value="<?=$pejabat_jasaraharja?>"selected><?=$pejabat_jasaraharja?></option>
                   <?php foreach($pilih_aparatur as $aparat):?>
                      <option value="<?=$aparat->nama?>"><?=$aparat->nip?> | <?=$aparat->nama?></option>
                   <?php endforeach;?>
@@ -283,7 +283,7 @@ function load_data_temp()
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <div class="col-sm-12">
                   <button class="btn btn-primary btn-block btn-flat" disabled>Tembusan</button>
                 </div>
@@ -306,7 +306,7 @@ function load_data_temp()
                   </table>
                 </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <div class="col-sm-12">
@@ -326,7 +326,7 @@ function load_data_temp()
      
         <div class="card-footer text-left">
         <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
-	    <button type="submit" class="btn btn-primary"><span class="fa fa-edit"></span><?php echo $button ?></button> 
+	    <!-- <button type="submit" class="btn btn-primary"><span class="fa fa-edit"></span><?php echo $button ?></button>  -->
 	    <a href="<?php echo site_url('surat_fiskal') ?>" class="btn btn-icon icon-left btn-success">Cancel</a>
 	
             </div>
