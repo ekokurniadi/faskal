@@ -113,7 +113,7 @@
            <a href="#" class="shadow-light">Control Panel</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-          <img src="<?= base_url()?>image/lg.png" alt="" width="40px">
+          <img src="<?= base_url()?>image/logo1580067792.png" alt="" width="40px">
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
@@ -150,10 +150,12 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i> <span>Kelola Data Fiskal</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="<?php echo base_url('kategori_berita')?>">Data Kendaraan</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('berita')?>">Data Daerah</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('slider')?>">Surat Fiskal</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('galeri')?>">Cetak Surat Fiskal (Arsip)</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Warna Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Jenis Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('daerah')?>">Data Daerah</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('surat_fiskal')?>">Surat Fiskal</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('arsip')?>">Cetak Surat Fiskal (Arsip)</a></li>
                 </ul>
               </li> 
 
