@@ -3,7 +3,7 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-6 mb-5">
             <h2 class="section-title-underline mb-3">
-              <span>Aparatur Desa</span>
+              <span>Aparatur </span>
             </h2>
           </div>
         </div>
@@ -13,7 +13,7 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-4 mb-5">
             <h2 class="section-title-underline mb-5">
-              <span>Aparatur Desa</span>
+              <span>Aparatur </span>
             </h2>
           </div>
         </div>
