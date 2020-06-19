@@ -47,6 +47,92 @@ class Surat_fiskal extends MY_Controller {
         $this->load->view('footer');
     }
 
+	function kode()
+    {
+             $this->db->select('RIGHT(surat_fiskal.no_seri,2) as no_seri', FALSE);
+             $this->db->order_by('no_seri','DESC');    
+             $this->db->limit(1);    
+             $query = $this->db->get('surat_fiskal');  //cek dulu apakah ada sudah ada kode di tabel.    
+             if($query->num_rows() <> 0){      
+                  //cek kode jika telah tersedia    
+                  $data = $query->row();      
+                  $kode = intval($data->no_seri) + 1; 
+             }
+             else{      
+                  $kode = 1;  //cek jika kode belum terdapat pada table
+             }  
+                date_default_timezone_set("Asia/Jakarta");
+                 $batas = str_pad($kode, 6, "0", STR_PAD_LEFT);    
+                 $kodetampil = $batas;  //format kode
+                 return $kodetampil;  
+   }
+
+   function kode2()
+    {	
+             $this->db->select('RIGHT(surat_fiskal.no_surat,2) as no_surat', FALSE);
+             $this->db->order_by('no_surat','DESC');    
+             $this->db->limit(1);    
+             $query = $this->db->get('surat_fiskal');  //cek dulu apakah ada sudah ada kode di tabel.    
+             if($query->num_rows() <> 0){      
+                  //cek kode jika telah tersedia    
+                  $data = $query->row();      
+                  $kode = intval($data->no_surat) + 1; 
+             }
+             else{      
+                  $kode = 1;  //cek jika kode belum terdapat pada table
+             }  
+                date_default_timezone_set("Asia/Jakarta");
+                 $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);    
+                 $batas1 = str_pad($kode, 6, "0", STR_PAD_LEFT);    
+				 $bulan = date('n');
+				 $tahun=date('Y');
+				 $romawi = $this->getRomawi($bulan); 
+                 $kodetampil = $batas." / ".$batas1." / FAD"." / ".$romawi." / ".$tahun;  //format kode
+                 return $kodetampil;  
+   }
+
+	function getRomawi($bln){
+        	switch ($bln){
+                    case 1: 
+                        return "I";
+                        break;
+                    case 2:
+                        return "II";
+                        break;
+                    case 3:
+                        return "III";
+                        break;
+                    case 4:
+                        return "IV";
+                        break;
+                    case 5:
+                        return "V";
+                        break;
+                    case 6:
+                        return "VI";
+                        break;
+                    case 7:
+                        return "VII";
+                        break;
+                    case 8:
+                        return "VIII";
+                        break;
+                    case 9:
+                        return "IX";
+                        break;
+                    case 10:
+                        return "X";
+                        break;
+                    case 11:
+                        return "XI";
+                        break;
+                    case 12:
+                        return "XII";
+                        break;
+              }
+       }
+
+
     public function read($id) 
     {
         $row = $this->Surat_fiskal_model->get_by_id($id);
@@ -85,7 +171,83 @@ class Surat_fiskal extends MY_Controller {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('surat_fiskal'));
         }
+	}
+	
+
+	public function hapus_temp()
+    {
+        $id=$_GET['id'];
+        $this->db->query("DELETE FROM detail_surat_fiskal where id='$id'");
     }
+
+     // fungsi ajax
+     public function load_temp()
+     {
+          echo " <table class='table table-bordered'>
+                        <thead>
+                        <tr>
+                        <th width='20px;'>No</th>
+                        <th>Tembusan</th>
+                        <th width='120px;'>Action</th>
+                        </tr>
+                    </thead>";
+                     $id=$_GET['no_seri'];
+                     $no=1;
+                     $data = $this->db->query("SELECT * FROM detail_surat_fiskal where no_seri='$id'")->result();
+                     foreach ($data as $d) {
+                      
+                         echo "<tbody><tr id='dataku$d->id'>
+                                 <td>$no</td>
+                                 <td>$d->tembusan</td>
+                                 <td><button type ='button' class='btn btn-icon btn-sm btn-danger' onClick='hapus($d->id)'><i class='fa fa-close'></i> Batal</td>
+                              </tr>
+                            </tbody>  ";
+                         $no++;
+                         
+                     }
+                     echo "</table>"; 
+                    
+     }
+     public function load_temp2()
+     {
+         echo " <table class='table table-bordered table-striped table-hover'>
+                        <thead>
+                        <tr>
+                        <th>No</th>
+                        <th>Tembusan</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>";
+                     $id=$_GET['no_seri'];
+                     $no=1;
+                     $data = $this->db->query("SELECT * FROM detail_surat_fiskal where no_seri='$id'")->result();
+                     foreach ($data as $d) {
+                      
+                         echo "<tbody><tr id='dataku$d->id'>
+                                 <td>$no</td>
+                                 <td>$d->tembusan</td>
+                                 <td><button type ='button' class='btn btn-icon btn-sm btn-danger' onClick='hapus($d->id)'><i class='fa fa-close'></i> Batal</td>
+                              </tr>
+                            </tbody>  ";
+                         $no++;
+                         
+                     }
+                     echo "</table>";  
+                    
+     }
+
+     function input_ajax()
+    {
+ 
+         $no_seri       = $_GET['no_seri'];
+         $tembusan      = $_GET['tembusan'];
+        $data=array(
+            'no_seri'=>$no_seri,
+            'tembusan'=>$tembusan, 
+            );
+        $this->db->insert('detail_surat_fiskal',$data);
+    }
+
 
     public function create() 
     {
@@ -118,7 +280,8 @@ class Surat_fiskal extends MY_Controller {
 	    'pejabat_uptd' => set_value('pejabat_uptd'),
 	    'pejabat_jasaraharja' => set_value('pejabat_jasaraharja'),
 	);
-
+		$data['kode']=$this->kode();
+		$data['kode2']=$this->kode2();
         $this->load->view('header');
         $this->load->view('surat_fiskal_form', $data);
         $this->load->view('footer');
@@ -173,8 +336,8 @@ class Surat_fiskal extends MY_Controller {
                 'button' => 'Update',
                 'action' => site_url('surat_fiskal/update_action'),
 		'id' => set_value('id', $row->id),
-		'no_seri' => set_value('no_seri', $row->no_seri),
-		'no_surat' => set_value('no_surat', $row->no_surat),
+		'kode' => set_value('no_seri', $row->no_seri),
+		'kode2' => set_value('no_surat', $row->no_surat),
 		'nomor_polisi' => set_value('nomor_polisi', $row->nomor_polisi),
 		'nama_pemilik' => set_value('nama_pemilik', $row->nama_pemilik),
 		'alamat' => set_value('alamat', $row->alamat),
@@ -197,7 +360,7 @@ class Surat_fiskal extends MY_Controller {
 		'tanggal_akhir_berlaku_swdkllj' => set_value('tanggal_akhir_berlaku_swdkllj', $row->tanggal_akhir_berlaku_swdkllj),
 		'pejabat_uptd' => set_value('pejabat_uptd', $row->pejabat_uptd),
 		'pejabat_jasaraharja' => set_value('pejabat_jasaraharja', $row->pejabat_jasaraharja),
-	    );
+		);
             $this->load->view('header');
             $this->load->view('surat_fiskal_form', $data);
             $this->load->view('footer');
