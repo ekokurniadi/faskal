@@ -151,9 +151,9 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i> <span>Kelola Data Fiskal</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="<?php echo base_url('daerah')?>">Data Daerah</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Warna Kendaraan</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Jenis Kendaraan</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('kendaraan')?>">Data Tipe Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('warna')?>">Data Warna Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('jenis_kendaraan')?>">Data Jenis Kendaraan</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('tipe_kendaraan')?>">Data Tipe Kendaraan</a></li>
                   <li><a class="nav-link" href="<?php echo base_url('surat_fiskal')?>">Surat Fiskal</a></li>
                   <li><a class="nav-link" href="<?php echo base_url('arsip')?>">Cetak Surat Fiskal (Arsip)</a></li>
                 </ul>
