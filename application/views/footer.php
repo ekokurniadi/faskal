@@ -56,6 +56,7 @@
 
   // load ckeditor
   CKEDITOR.replace( 'alamat' );
+  CKEDITOR.replace( 'alamat_pemilik' );
 
   // load datepicker
   $('#datepicker').datepicker({

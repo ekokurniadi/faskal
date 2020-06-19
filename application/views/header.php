@@ -28,7 +28,7 @@
 
  
 </head>
-
+<body oncontextmenu="return false;" class="hold-transition skin-red-light sidebar-mini">
 <body>
   <div id="app">
     <div class="main-wrapper">
