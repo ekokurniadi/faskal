@@ -8,7 +8,7 @@
             <p><a href="<?php echo base_url('web/tentang')?>">Learn More</a></p>
           </div>
           <div class="col-lg-2">
-            <h3 class="footer-heading"><span>Profil Desa</span></h3>
+            <h3 class="footer-heading"><span>Profil</span></h3>
             <ul class="list-unstyled">
                 <li><a href="<?php echo base_url('web/sejarah')?>">Sejarah</a></li>
                 <li><a href="<?php echo base_url('web/tentang')?>">Tentang</a></li>
