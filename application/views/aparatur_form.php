@@ -19,6 +19,12 @@
         <form action="<?php echo $action; ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
 	   
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="varchar">NIP <?php echo form_error('nip') ?></label>
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" name="nip" id="nip" placeholder="NIP" value="<?php echo $nip; ?>" />
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="varchar">Nama <?php echo form_error('nama') ?></label>
                 <div class="col-sm-12">
                   <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
@@ -26,12 +32,28 @@
               </div>
 	   
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="varchar">Bagian <?php echo form_error('bagian') ?></label>
+                <label class="col-sm-2 control-label" for="varchar">Pangkat <?php echo form_error('bagian') ?></label>
                 <div class="col-sm-12">
-                  <input type="text" class="form-control" name="bagian" id="bagian" placeholder="Bagian" value="<?php echo $bagian; ?>" />
+               <select name="bagian" id="bagian" class="form-control">
+                <option value="<?=$bagian?>" selected>Select an option</option>
+               <?php foreach($pilih_pangkat as $pp):?>
+                 <option value="<?=$pp->bidang?>"><?=$pp->bidang?></option>
+               <?php endforeach;?>
+               </select>
                 </div>
               </div>
 	   
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="varchar">Jabatan <?php echo form_error('jabatan') ?></label>
+                <div class="col-sm-12">
+                <select name="jabatan" id="jabatan" class="form-control">
+                <option value="<?=$jabatan?>" selected>Select an option</option>
+               <?php foreach($pilih_jabatan as $j):?>
+                 <option value="<?=$j->jabatan?>"><?=$j->jabatan?></option>
+               <?php endforeach;?>
+               </select>
+                </div>
+              </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="varchar">Foto <?php echo form_error('foto') ?></label>
                 <div class="col-sm-12">

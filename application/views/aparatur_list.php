@@ -55,8 +55,10 @@
                       <thead>
                       <tr>
                           <th>No</th>
+		<th>NIP</th>
 		<th>Nama</th>
-		<th>Bagian</th>
+		<th>Pangkat</th>
+		<th>Jabatan</th>
 		<th>Foto</th>
 		<th>Action</th>
                     </tr>
@@ -67,8 +69,10 @@
                           <tbody>
                           <tr>
 			<td width="80px"><?php echo ++$start ?></td>
+			<td><?php echo $aparatur->nip ?></td>
 			<td><?php echo $aparatur->nama ?></td>
 			<td><?php echo $aparatur->bagian ?></td>
+			<td><?php echo $aparatur->jabatan ?></td>
 			<td><img src="<?php echo base_url().'image/'. $aparatur->foto ?>" alt="" width="50px"></td>
 			<td style="text-align:center" width="200px">
 				<?php 

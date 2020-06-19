@@ -53,7 +53,9 @@ class Aparatur extends MY_Controller {
         if ($row) {
             $data = array(
 		'id' => $row->id,
+		'nip' => $row->nip,
 		'nama' => $row->nama,
+		'jabatan' => $row->jabatan,
 		'bagian' => $row->bagian,
 		'foto' => $row->foto,
 	    );
@@ -72,9 +74,13 @@ class Aparatur extends MY_Controller {
             'button' => 'Create',
             'action' => site_url('aparatur/create_action'),
 	    'id' => set_value('id'),
+	    'nip' => set_value('nip'),
 	    'nama' => set_value('nama'),
+	    'jabatan' => set_value('jabatan'),
 	    'bagian' => set_value('bagian'),
-	    'foto' => set_value('foto'),
+        'foto' => set_value('foto'),
+        'pilih_jabatan'=>$this->db->query("SELECT * FROM jabatan")->result(),
+        'pilih_pangkat'=>$this->db->query("SELECT * from bidang_kerja where active='active'")->result()
 	);
 
         $this->load->view('header');
@@ -100,7 +106,9 @@ class Aparatur extends MY_Controller {
                 $gbr = $this->upload->data();
                 $data = array(
                     'foto' =>  $gbr['file_name'],
+                    'nip' => $this->input->post('nip',TRUE),
                     'nama' => $this->input->post('nama',TRUE),
+                    'jabatan' => $this->input->post('jabatan',TRUE),
                     'bagian' => $this->input->post('bagian',TRUE),
                 );
 
@@ -121,9 +129,13 @@ class Aparatur extends MY_Controller {
                 'button' => 'Update',
                 'action' => site_url('aparatur/update_action'),
 		'id' => set_value('id', $row->id),
+		'nip' => set_value('nip', $row->nip),
 		'nama' => set_value('nama', $row->nama),
+		'jabatan' => set_value('jabatan', $row->jabatan),
 		'bagian' => set_value('bagian', $row->bagian),
-		'foto' => set_value('foto', $row->foto),
+        'foto' => set_value('foto', $row->foto),
+        'pilih_jabatan'=>$this->db->query("SELECT * FROM jabatan")->result(),
+        'pilih_pangkat'=>$this->db->query("SELECT * from bidang_kerja where active='active'")->result()
 	    );
             $this->load->view('header');
             $this->load->view('aparatur_form', $data);
@@ -156,7 +168,9 @@ class Aparatur extends MY_Controller {
                         {
                             $gbr = $this->upload->data();
                             $data = array(
+                                'nip' => $this->input->post('nip',TRUE),
                                 'nama' => $this->input->post('nama',TRUE),
+                                'jabatan' => $this->input->post('jabatan',TRUE),
                                 'bagian' => $this->input->post('bagian',TRUE),
                                 'foto' => $gbr['file_name'],
                             );
@@ -170,7 +184,9 @@ class Aparatur extends MY_Controller {
                     else
                         {
                             $data = array(
+                                'nip' => $this->input->post('nip',TRUE),
                                 'nama' => $this->input->post('nama',TRUE),
+                                'jabatan' => $this->input->post('jabatan',TRUE),
                                 'bagian' => $this->input->post('bagian',TRUE),
                             );
                         }
@@ -197,7 +213,9 @@ class Aparatur extends MY_Controller {
 
     public function _rules() 
     {
+	$this->form_validation->set_rules('nip', 'nip', 'trim|required');
 	$this->form_validation->set_rules('nama', 'nama', 'trim|required');
+	$this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
 	$this->form_validation->set_rules('bagian', 'bagian', 'trim|required');
 	$this->form_validation->set_rules('foto', 'foto', 'trim|required');
 

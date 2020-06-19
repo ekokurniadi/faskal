@@ -3,7 +3,7 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-4 mb-5" >
             <h2 class="section-title-underline mb-5" >
-              <span >Bidang Kerja</span>
+              <span >Pangkat</span>
             </h2>
           </div>
         </div>

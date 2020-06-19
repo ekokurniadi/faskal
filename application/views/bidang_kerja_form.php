@@ -2,10 +2,10 @@
  <div class="main-content">
 <section class="section">
   <div class="section-header">
-    <h1> Bidang Kerja </h1>
+    <h1> Pangkat </h1>
     <div class="section-header-breadcrumb">
       <div class="breadcrumb-item active"><a href="<?php echo base_url(); ?>dashboard"><i class="fa fa-dashboard"></i> Home</a></div>
-      <div class="breadcrumb-item"><a href="#"> Bidang Kerja </a></div>
+      <div class="breadcrumb-item"><a href="#"> Pangkat </a></div>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
       <div class="col-12 col-md-12 col-lg-12">
         <div class="card">
         <div class="card-header">
-            <h4>Form Bidang Kerja </h4>
+            <h4>Form Pangkat </h4>
         </div>
         <form action="<?php echo $action; ?>" method="post" class="form-horizontal">
 	   
@@ -32,9 +32,9 @@
               </div>
 	   
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="varchar">Bidang <?php echo form_error('bidang') ?></label>
+                <label class="col-sm-2 control-label" for="varchar">Pangkat <?php echo form_error('bidang') ?></label>
                 <div class="col-sm-12">
-                  <input type="text" class="form-control" name="bidang" id="bidang" placeholder="Bidang" value="<?php echo $bidang; ?>" />
+                  <input type="text" class="form-control" name="bidang" id="bidang" placeholder="Pangkat" value="<?php echo $bidang; ?>" />
                 </div>
               </div>
 	      

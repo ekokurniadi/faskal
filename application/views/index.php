@@ -28,7 +28,7 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Aparatur Desa</h4>
+                    <h4>Aparatur</h4>
                   </div>
                   <div class="card-body">
                   <?php echo $aparatur->num_rows();?>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Bidang</h4>
+                    <h4>Pangkat</h4>
                   </div>
                   <div class="card-body">
                   <?php echo $bidang_kerja->num_rows();?>

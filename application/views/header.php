@@ -130,8 +130,9 @@
                   <li><a class="nav-link" href="<?php echo base_url('sejarah')?>">Sejarah</a></li>
                   <li><a class="nav-link" href="<?php echo base_url('tentang_kami')?>">Tentang Kami</a></li>
                   <li><a class="nav-link" href="<?php echo base_url('kontak')?>">Kontak Kami</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('aparatur')?>">Aparatur Desa</a></li>
-                  <li><a class="nav-link" href="<?php echo base_url('bidang_kerja')?>">Bidang Kerja</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('aparatur')?>">Aparatur</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('bidang_kerja')?>">Pangkat</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url('jabatan')?>">Jabatan</a></li>
                 </ul>
               </li> 
               <li class="menu-header">Konten</li>
