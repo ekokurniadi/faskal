@@ -222,7 +222,7 @@
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
                     <td width="200px;"> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Rp.</p>  
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Rp.<?php echo number_format($surat_data['bbn_kb_sebesar'],0,',','.')?></p>  
                     </td>
                     <td width="80px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Tanggal</p>  
@@ -231,7 +231,7 @@
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
                     <td> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?php echo formatTanggal($surat_data['tanggal_pkb'])?></p>  
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?php echo formatTanggal($surat_data['tanggal_bbn_kb'])?></p>  
                     </td>
                   
                </tr>
@@ -274,7 +274,7 @@
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">1. </p>  
                     </td>
                     <td width="200px;"> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Daerah Tujuan</p>  
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Daerah tujuan</p>  
                     </td>
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
@@ -290,7 +290,7 @@
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">2. </p>  
                     </td>
                     <td width="200px;" style="padding-top:-25px;"> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Untuk Atas Nama</p>  
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Untuk atas nama</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
@@ -300,6 +300,20 @@
                     </td>
                   
                   
+               </tr>
+               <tr>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">3. </p>  
+                    </td>
+                    <td width="200px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Alamat pemilik</p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
+                    </td>
+                    <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"> 
+                        <?=$surat_data['alamat']?>
+                    </td>    
                </tr>
             </table>
        </body>
