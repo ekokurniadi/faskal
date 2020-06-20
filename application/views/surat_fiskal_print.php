@@ -316,5 +316,42 @@
                     </td>    
                </tr>
             </table>
+            <table>
+            <tr>
+                <td colspan="2" width="100px;" style="padding-top:-25px;">
+                    <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Demikian agar yang berkepentingan maklum </p>  
+                </td>
+            </tr>
+            </table>
+            <table>
+            <tr>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">*) </p>  
+                    </td>
+                    <td width="200px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Catatan</p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>
+                    </td>
+                    <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"width="200px;"> 
+                       <p></p>
+                    </td>    
+               </tr>
+               <tr>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>  
+                    </td>
+                    <td width="200px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Kanu dan/atau Sertifikat SWDKLLJ</p>  
+                    </td>
+                    <td style="padding-top:-25px;" width="200px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>
+                    </td>
+                    <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"width="200px;"> 
+                       <p><?php echo tgl_indo($surat_data['tanggal_surat'])?></p>
+                    </td>    
+               </tr>
+            </table>
        </body>
        </html>
