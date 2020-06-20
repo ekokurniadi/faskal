@@ -116,7 +116,7 @@
 				<?php 
 				echo anchor(site_url('surat_fiskal/detail/'.$surat_fiskal->id),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-icon icon-left btn-light')); 
         echo '  '; 
-				echo anchor(site_url('surat_fiskal/delete/'.$surat_fiskal->id),'<i class="fa fa-print"></i>','title="print" class="btn btn-icon icon-left btn-success" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				echo anchor(site_url('surat_fiskal/cetak_surat/'.$surat_fiskal->id),'<i class="fa fa-print"></i>','title="print" class="btn btn-icon icon-left btn-success" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				echo '  '; 
 				echo anchor(site_url('surat_fiskal/update/'.$surat_fiskal->id),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-icon icon-left btn-warning')); 
 				echo '  '; 

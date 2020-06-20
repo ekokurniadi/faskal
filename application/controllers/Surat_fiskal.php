@@ -12,7 +12,26 @@ class Surat_fiskal extends MY_Controller {
         parent::__construct();
         $this->load->model('Surat_fiskal_model');
         $this->load->library('form_validation');
+        require_once APPPATH.'third_party/dompdf/dompdf_config.inc.php';
     }
+
+
+    public function cetak_surat($id)
+    {
+        $dompdf= new Dompdf();
+      
+        $data['surat_data']=  $this->db->query("SELECT * from surat_fiskal where id='$id'")->row_array();
+        $data['start']=0;
+        $html=$this->load->view('surat_fiskal_print',$data,true);
+       
+        $dompdf->load_html($html);
+        $dompdf->set_paper('A4','potrait');
+        $dompdf->render();
+       
+        $pdf = $dompdf->output();
+ 
+        $dompdf->stream('Surat Fiskal.pdf',array("Attachment"=>FALSE));
+     }
 
     public function index()
     {
