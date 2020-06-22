@@ -1,26 +1,9 @@
 <html>
        <head>
-           <title></title>
+           <title>Cetak Surat Fiskal <?=$surat_data['no_surat']?></title>
            <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css') ?>"/>
-           <style>
-               .word-table {
-                   border:1px solid black !important; 
-                   border-collapse: collapse !important;
-                   width: 100%;
-               }
-               .word-table tr th, .word-table tr td{
-                   border:1px solid black !important; 
-                   padding: 5px 10px;
-                  
-                   
-               }
-               .word-table th{
-                   border:1px solid black !important; 
-                   padding: 5px 10px;
-                   background-color:yellow;
-                   
-               }
-           </style>
+           <?php $log = $this->db->query("SELECT * FROM tentang_kami order by id DESC LIMIT 1")->row_array();?>
+           <link rel="shortcut icon" href="<?php echo base_url().'image/'.$log['logo']?>">  
        </head>
        <body>
           <table style="padding-bottom:-20px;">
@@ -79,7 +62,7 @@
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">1. </p>  
                     </td>
-                    <td width="200px;"> 
+                    <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Nomor Polisi</p>  
                     </td>
                     <td> 
@@ -94,7 +77,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">2. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Nama Pemilik</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -108,21 +91,21 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">3. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Alamat</p>  
                     </td>
                     <td style="padding-top:-25px;font-size:12px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>    
                     <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"> 
-                        <?=$surat_data['alamat']?>
+                    <p><?=strtoupper($surat_data['alamat'])?></p>
                     </td>    
                </tr>
                <tr>
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">4. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Merk/Type Kendaraan</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -136,7 +119,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">5. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Tahun/CC Kendaraan</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -150,7 +133,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">6. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Warna Kendaraan</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -164,7 +147,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">7. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Nomor Chasis</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -178,7 +161,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">8. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Nomor Mesin</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -192,7 +175,7 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">9. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Jenis</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
@@ -215,16 +198,16 @@
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">1. </p>  
                     </td>
-                    <td width="200px;"> 
+                    <td width="120px"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">BBN-KB sebesar</p>  
                     </td>
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
-                    <td width="200px;"> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Rp.<?php echo number_format($surat_data['bbn_kb_sebesar'],0,',','.')?></p>  
+                    <td width="120px"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Rp. <?php echo number_format($surat_data['bbn_kb_sebesar'],0,',','.')?></p>  
                     </td>
-                    <td width="80px;"> 
+                    <td width="120px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Tanggal</p>  
                     </td>
                     <td> 
@@ -239,13 +222,13 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">2. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">PKB sebesar</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Rp. <?php echo number_format($surat_data['pkb_sebesar'],0,',','.')?></p>  
                     </td>
                     <td width="80px;" style="padding-top:-25px;"> 
@@ -273,13 +256,13 @@
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">1. </p>  
                     </td>
-                    <td width="200px;"> 
+                    <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Daerah tujuan</p>  
                     </td>
                     <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
-                    <td width="200px;"> 
+                    <td> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=strtoupper($surat_data['daerah_tujuan'])?></p>  
                     </td>
                  
@@ -289,13 +272,13 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">2. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Untuk atas nama</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=$surat_data['untuk_atas_nama']?></p>  
                     </td>
                   
@@ -305,20 +288,20 @@
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">3. </p>  
                     </td>
-                    <td width="200px;" style="padding-top:-25px;"> 
+                    <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Alamat pemilik</p>  
                     </td>
                     <td style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
                     <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"> 
-                        <?=$surat_data['alamat']?>
-                    </td>    
+                        <p><?=strtoupper($surat_data['alamat_pemilik'])?></p>
+                    </td>   
                </tr>
             </table>
             <table>
             <tr>
-                <td colspan="2" width="100px;" style="padding-top:-25px;">
+                <td colspan="2" width="100px;" style="padding-top:-15px;">
                     <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Demikian agar yang berkepentingan maklum </p>  
                 </td>
             </tr>
@@ -345,13 +328,123 @@
                     <td width="200px;" style="padding-top:-25px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Kanu dan/atau Sertifikat SWDKLLJ</p>  
                     </td>
-                    <td style="padding-top:-25px;" width="200px;"> 
+                    <td style="padding-top:-25px;" width="230px;"> 
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>
                     </td>
-                    <td style="padding-top:-25px;font-size:12px;font-family:sans-serif"width="200px;"> 
+                    <td style="padding-top:-25px;font-size:13px;font-family:sans-serif;font-weight:bold;" width="200px;"> 
                        <p><?php echo tgl_indo($surat_data['tanggal_surat'])?></p>
                     </td>    
                </tr>
+               <tr>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">No.</p>  
+                    </td>
+                    <td style="padding-top:-25px;padding-left:-180px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;text-decoration:underline"><?=$surat_data['no_swdkllj']?></p>
+                    </td>
+                    <td style="padding-top:-25px;padding-left:-355px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Tanggal</p>
+                    </td>
+                    <td style="padding-top:-25px;padding-left:-510px;font-size:12px;font-family:sans-serif;font-weight:normal;" width="100px;"> 
+                       <p style="text-decoration:underline"><?php echo formatTanggal($surat_data['tanggal_swdkllj'])?></p>
+                    </td>    
+               </tr>
+               <tr>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Berlaku sampai dengan</p>  
+                    </td>
+                    <td style="padding-top:-25px;padding-left:-72px;font-size:12px;font-family:sans-serif;font-weight:normal;" width="100px;"> 
+                       <p style="text-decoration:underline"><?php echo formatTanggal($surat_data['tanggal_akhir_berlaku_swdkllj'])?></p>
+                    </td>
+               </tr>
+            </table>
+
+            <table style="padding-left:15px;padding-top:-25px;">
+               <tr>
+                    <td width="330px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Kepala Perwakilan PT. Asuransi</p>  
+                    </td>
+                    <td style="padding-top:-15px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">an. Kepala Badan Keuangan Daerah Provinsi Jambi</p>
+                    </td>
+               </tr>
+               <tr>
+                    <td width="330px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Keuangan Jasaraharja</p>  
+                    </td>
+                    <td style="padding-top:-40px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">UPTD-PPD Kota Jambi</p>
+                    </td>
+               </tr>
+               </table>
+               <br>
+               <br>
+               <br>
+               <table style="padding-left:15px;padding-top:25px;">
+               <tr>
+                    <td width="330px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;text-decoration:underline;"><?=$surat_data['pejabat_jasaraharja']?></p>  
+                    </td>
+                    <td style="padding-top:0px;"> 
+                        <p style="font-family:sans-serif;text-decoration:underline;text-align:justify;font-size:12px;font-weight:normal;text-decoration:underline;"><?=$surat_data['pejabat_uptd']?></p>
+                    </td>
+               </tr>
+               
+               <?php 
+               $jasa=$surat_data['pejabat_jasaraharja'];
+               $data_pejabat=$this->db->query("SELECT nip FROM aparatur where nama='$jasa'")->row_array();
+               $uptd=$surat_data['pejabat_uptd'];
+               $data_uptd=$this->db->query("SELECT nip,bagian from aparatur where nama='$uptd'")->row_array();
+               ?>
+               <tr>
+                    <td width="330px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">NIP. <?=$data_pejabat['nip']?></p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Pangkat : <?= $data_uptd['bagian']?></p>
+                    </td>
+               </tr>
+               <tr>
+                    <td width="330px;" style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"></p>  
+                    </td>
+                    <td style="padding-top:-25px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">NIP</p>
+                    </td>
+                    <td style="padding-top:-25px;padding-left:-73px;"> 
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">: <?= $data_uptd['nip']?></p>
+                    </td>
+               </tr>
+               </table>
+
+               <br>
+               <br>
+               <br>
+               <br>
+               <table>
+            <tr>
+                <td colspan="2" width="100px;" style="padding-top:-25px;">
+                    <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:bold;">Tembusan :</p>  
+                </td>
+            </tr>
+            <?php $data_tembusan=$this->db->query("select * from detail_surat_fiskal where no_seri='$surat_data[no_seri]'")->result();?>
+            <?php $no =1;
+            foreach($data_tembusan as $tem):?>
+            <tr>
+            <td style="padding-top:-25px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=$no++?>.</p>  
+            </td>
+            <td width="200px;" style="padding-top:-25px;padding-left:-30px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=$tem->tembusan?></p>  
+            </td>
+            </tr>
+            <?php endforeach;?>
             </table>
        </body>
        </html>

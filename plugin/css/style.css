@@ -567,11 +567,11 @@ h1, h2, h3, h4, h5,
   background-repeat: no-repeat;
   background-position: center; 
   position: relative;
-margin: auto; 
+  margin: auto; 
 }
   .intro-section, .intro-section .container .row {
     height: 430px;
-    width: auto; 
+    width: 50px; 
   }
   .intro-section:before {
     content: "";

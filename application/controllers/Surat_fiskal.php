@@ -88,7 +88,7 @@ class Surat_fiskal extends MY_Controller {
 
    function kode2()
     {	
-             $this->db->select('RIGHT(surat_fiskal.no_surat,2) as no_surat', FALSE);
+             $this->db->select('LEFT(surat_fiskal.no_surat,3) as no_surat', FALSE);
              $this->db->order_by('no_surat','DESC');    
              $this->db->limit(1);    
              $query = $this->db->get('surat_fiskal');  //cek dulu apakah ada sudah ada kode di tabel.    
@@ -106,7 +106,7 @@ class Surat_fiskal extends MY_Controller {
 				 $bulan = date('n');
 				 $tahun=date('Y');
 				 $romawi = $this->getRomawi($bulan); 
-                 $kodetampil = $batas." / ".$batas1." / FAD"." / ".$romawi." / ".$tahun;  //format kode
+                 $kodetampil = $batas." /".$batas1." /FAD"." /".$romawi." /".$tahun;  //format kode
                  return $kodetampil;  
         }
 
@@ -447,6 +447,49 @@ class Surat_fiskal extends MY_Controller {
         }
     }
     
+    public function arsip()
+    {
+        $this->load->view('header');
+        $this->load->view('arsip');
+        $this->load->view('footer');
+    }
+   
+    public function proses()
+    {
+        echo " <table class='table table-bordered'>
+                        <thead>
+                        <tr>
+                        <th width='20px;'>No</th>
+                        <th>No Seri</th>
+                        <th>No Surat</th>
+                        <th>No Polisi</th>
+                        <th>Nama Pemilik</th>
+                        <th>Alamat</th>
+                        <th width='120px;'>Action</th>
+                        </tr>
+                    </thead>";
+                     $tanggal1=$_GET['tanggal1'];
+                     $tanggal2=$_GET['tanggal2'];
+                     $no=1;
+                     $data = $this->db->query("SELECT * FROM surat_fiskal where tanggal_surat between '$tanggal1' and '$tanggal2' ")->result();
+                     foreach ($data as $d) {
+                      
+                         echo "<tbody><tr id='dataku$d->id'>
+                                 <td>$no</td>
+                                 <td>$d->no_seri</td>
+                                 <td>$d->no_surat</td>
+                                 <td>$d->nomor_polisi</td>
+                                 <td>$d->nama_pemilik</td>
+                                 <td>$d->alamat</td>
+                                 <td><a href='cetak_surat/$d->id' target='_blank' class='btn btn-sm btn-success'><i class='fa fa-print'> Cetak</a></td>
+                              </tr>
+                            </tbody>  ";
+                         $no++;
+                         
+                     }
+                     echo "</table>";
+    }
+
     public function update_action() 
     {
         $this->_rules();
@@ -514,8 +557,8 @@ class Surat_fiskal extends MY_Controller {
 	$this->form_validation->set_rules('nomor_chasis', 'nomor chasis', 'trim|required');
 	$this->form_validation->set_rules('nomor_mesin', 'nomor mesin', 'trim|required');
 	$this->form_validation->set_rules('jenis', 'jenis', 'trim|required');
-	$this->form_validation->set_rules('bbn_kb_sebesar', 'bbn kb sebesar', 'trim|required|numeric');
-	$this->form_validation->set_rules('tanggal_bbn_kb', 'tanggal bbn kb', 'trim|required');
+	$this->form_validation->set_rules('bbn_kb_sebesar', 'bbn kb sebesar', 'trim|numeric');
+	$this->form_validation->set_rules('tanggal_bbn_kb', 'tanggal bbn kb', 'trim|');
 	$this->form_validation->set_rules('pkb_sebesar', 'pkb sebesar', 'trim|required|numeric');
 	$this->form_validation->set_rules('tanggal_pkb', 'tanggal pkb', 'trim|required');
 	$this->form_validation->set_rules('daerah_tujuan', 'daerah tujuan', 'trim|required');

@@ -1,7 +1,7 @@
 
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; <?php echo date('Y')?> My Company<div class="bullet"></div><a href="">Allright Reserved</a>
+          Copyright &copy; <?php echo date('Y')?> Pemerintah Provinsi Jambi<div class="bullet"></div><a href="">Allright Reserved</a>
         </div>
         <div class="footer-right">
           2.3.0
@@ -55,8 +55,8 @@
   });
 
   // load ckeditor
-  CKEDITOR.replace( 'alamat' );
-  CKEDITOR.replace( 'alamat_pemilik' );
+  // CKEDITOR.replace( 'alamat' );
+  // CKEDITOR.replace( 'alamat_pemilik' );
 
   // load datepicker
   $('#datepicker').datepicker({

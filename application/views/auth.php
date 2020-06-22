@@ -16,6 +16,8 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url()?>/assets/css/components.css">
+  <?php $log = $this->db->query("SELECT * FROM tentang_kami order by id DESC LIMIT 1")->row_array();?>
+  <link rel="shortcut icon" href="<?php echo base_url().'image/'.$log['logo']?>">
 </head>
 
 <body style="background-image:url('<?php echo base_url()?>image/bg.jpg')">

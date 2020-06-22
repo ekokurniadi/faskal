@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Company Profile &mdash;</title>
+  <title>Pemerintah Provinsi Jambi</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,7 +25,9 @@
   <!-- komponen text area -->
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>    
-
+  
+  <?php $log = $this->db->query("SELECT * FROM tentang_kami order by id DESC LIMIT 1")->row_array();?>
+  <link rel="shortcut icon" href="<?php echo base_url().'image/'.$log['logo']?>">
  
 </head>
 <body oncontextmenu="return false;" class="hold-transition skin-red-light sidebar-mini">

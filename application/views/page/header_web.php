@@ -27,6 +27,8 @@
 
   <link rel="stylesheet" href="<?php echo base_url()?>plugin/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <?php $log = $this->db->query("SELECT * FROM tentang_kami order by id DESC LIMIT 1")->row_array();?>
+  <link rel="shortcut icon" href="<?php echo base_url().'image/'.$log['logo']?>">
 
 </head>
 

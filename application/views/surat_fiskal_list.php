@@ -60,25 +60,6 @@
 		<th>Nomor Polisi</th>
 		<th>Nama Pemilik</th>
 		<th>Alamat</th>
-		<!-- <th>Merktype Kendaraan</th>
-		<th>Tahuncc Kendaraan</th>
-		<th>Warna Kendaraan</th>
-		<th>Nomor Chasis</th>
-		<th>Nomor Mesin</th>
-		<th>Jenis</th>
-		<th>Bbn Kb Sebesar</th>
-		<th>Tanggal Bbn Kb</th>
-		<th>Pkb Sebesar</th>
-		<th>Tanggal Pkb</th>
-		<th>Daerah Tujuan</th>
-		<th>Untuk Atas Nama</th>
-		<th>Alamat Pemilik</th>
-		<th>Tanggal Surat</th>
-		<th>No Swdkllj</th>
-		<th>Tanggal Swdkllj</th>
-		<th>Tanggal Akhir Berlaku Swdkllj</th>
-		<th>Pejabat Uptd</th>
-		<th>Pejabat Jasaraharja</th> -->
 		<th>Action</th>
                     </tr>
                     </thead><?php
@@ -93,30 +74,11 @@
 			<td><?php echo $surat_fiskal->nomor_polisi ?></td>
 			<td><?php echo $surat_fiskal->nama_pemilik ?></td>
 			<td><?php echo $surat_fiskal->alamat ?></td>
-			<!-- <td><?php echo $surat_fiskal->merktype_kendaraan ?></td>
-			<td><?php echo $surat_fiskal->tahuncc_kendaraan ?></td>
-			<td><?php echo $surat_fiskal->warna_kendaraan ?></td>
-			<td><?php echo $surat_fiskal->nomor_chasis ?></td>
-			<td><?php echo $surat_fiskal->nomor_mesin ?></td>
-			<td><?php echo $surat_fiskal->jenis ?></td>
-			<td><?php echo $surat_fiskal->bbn_kb_sebesar ?></td>
-			<td><?php echo $surat_fiskal->tanggal_bbn_kb ?></td>
-			<td><?php echo $surat_fiskal->pkb_sebesar ?></td>
-			<td><?php echo $surat_fiskal->tanggal_pkb ?></td>
-			<td><?php echo $surat_fiskal->daerah_tujuan ?></td>
-			<td><?php echo $surat_fiskal->untuk_atas_nama ?></td>
-			<td><?php echo $surat_fiskal->alamat_pemilik ?></td>
-			<td><?php echo $surat_fiskal->tanggal_surat ?></td>
-			<td><?php echo $surat_fiskal->no_swdkllj ?></td>
-			<td><?php echo $surat_fiskal->tanggal_swdkllj ?></td>
-			<td><?php echo $surat_fiskal->tanggal_akhir_berlaku_swdkllj ?></td>
-			<td><?php echo $surat_fiskal->pejabat_uptd ?></td>
-			<td><?php echo $surat_fiskal->pejabat_jasaraharja ?></td> -->
 			<td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('surat_fiskal/detail/'.$surat_fiskal->id),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-icon icon-left btn-light')); 
+				echo anchor(site_url('surat_fiskal/detail/'.$surat_fiskal->id),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-icon icon-left btn-primary')); 
         echo '  '; 
-				echo anchor(site_url('surat_fiskal/cetak_surat/'.$surat_fiskal->id),'<i class="fa fa-print"></i>','title="print" class="btn btn-icon icon-left btn-success" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				echo anchor(site_url('surat_fiskal/cetak_surat/'.$surat_fiskal->id),'<i class="fa fa-print"></i>',array('title'=>'cetak surat','class'=>'btn btn-icon icon-left btn-success','target'=>'_blank')); 
 				echo '  '; 
 				echo anchor(site_url('surat_fiskal/update/'.$surat_fiskal->id),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-icon icon-left btn-warning')); 
 				echo '  '; 

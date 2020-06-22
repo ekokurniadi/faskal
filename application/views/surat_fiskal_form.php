@@ -116,7 +116,7 @@ function load_data_temp()
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="alamat">Alamat <?php echo form_error('alamat') ?></label>
                 <div class="col-sm-12">
-                    <textarea class="form-control" rows="3" name="alamat" id="alamat" placeholder="Alamat"><?php echo $alamat; ?></textarea>
+                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat" value="<?php echo $alamat; ?>" />
                 </div>
               </div>
 	   
@@ -227,7 +227,7 @@ function load_data_temp()
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="alamat_pemilik">Alamat Pemilik <?php echo form_error('alamat_pemilik') ?></label>
                 <div class="col-sm-12">
-                    <textarea class="form-control" rows="3" name="alamat_pemilik" id="alamat_pemilik" placeholder="Alamat Pemilik"><?php echo $alamat_pemilik; ?></textarea>
+                <input type="text" class="form-control" name="alamat_pemilik" id="alamat_pemilik" placeholder="Alamat Pemilik" value="<?php echo $alamat_pemilik; ?>" />
                 </div>
               </div>
 	   
