@@ -214,7 +214,13 @@
                         <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">:</p>
                     </td>
                     <td> 
-                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?php echo formatTanggal($surat_data['tanggal_bbn_kb'])?></p>  
+                        <?php if($surat_data['tanggal_bbn_kb']=="0000-00-00"){
+                        $tanggal="";
+                        }else{
+                            $tanggal =formatTanggal($surat_data['tanggal_bbn_kb']);
+                        }
+                        ?>
+                        <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?php echo $tanggal;?></p>  
                     </td>
                   
                </tr>
@@ -433,18 +439,31 @@
                     <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:bold;">Tembusan :</p>  
                 </td>
             </tr>
-            <?php $data_tembusan=$this->db->query("select * from detail_surat_fiskal where no_seri='$surat_data[no_seri]'")->result();?>
-            <?php $no =1;
-            foreach($data_tembusan as $tem):?>
             <tr>
             <td style="padding-top:-25px;"> 
-                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=$no++?>.</p>  
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">1.</p>  
             </td>
             <td width="200px;" style="padding-top:-25px;padding-left:-30px;"> 
-                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;"><?=$tem->tembusan?></p>  
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Yth. Kepala Badan Keuangan Daerah Provinsi Jambi</p>  
             </td>
             </tr>
-            <?php endforeach;?>
+            <tr>
+            <td style="padding-top:-25px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">2.</p>  
+            </td>
+            <td width="200px;" style="padding-top:-25px;padding-left:-30px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Yth. Sdr. Kasi STNK Polda Jambi</p>  
+            </td>
+            </tr>
+            <tr>
+            <td style="padding-top:-25px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">3.</p>  
+            </td>
+            <td width="200px;" style="padding-top:-25px;padding-left:-30px;"> 
+                <p style="font-family:sans-serif;text-align:justify;font-size:12px;font-weight:normal;">Arsip</p>  
+            </td>
+            </tr>
+           
             </table>
        </body>
        </html>

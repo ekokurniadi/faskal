@@ -101,12 +101,12 @@ class Surat_fiskal extends MY_Controller {
                   $kode = 1;  //cek jika kode belum terdapat pada table
              }  
                 date_default_timezone_set("Asia/Jakarta");
-                 $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);    
+                 $batas = 973;    
                  $batas1 = str_pad($kode, 6, "0", STR_PAD_LEFT);    
 				 $bulan = date('n');
 				 $tahun=date('Y');
-				 $romawi = $this->getRomawi($bulan); 
-                 $kodetampil = $batas." /".$batas1." /FAD"." /".$romawi." /".$tahun;  //format kode
+				 $romawi = $this->getRomawi($bulan);
+                 $kodetampil = $batas." /  "." /  "." /  ".$romawi." /".$tahun;  //format kode
                  return $kodetampil;  
         }
 

@@ -95,7 +95,7 @@ function load_data_temp()
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="varchar">No Surat <?php echo form_error('no_surat') ?></label>
                 <div class="col-sm-12">
-                  <input type="text" class="form-control" name="no_surat" id="no_surat" placeholder="No Surat" value="<?php echo $kode2; ?>" readonly/>
+                  <input type="text" class="form-control" name="no_surat" id="no_surat" placeholder="No Surat" value="<?php echo $kode2; ?>"/>
                 </div>
               </div>
 	   
@@ -283,7 +283,7 @@ function load_data_temp()
                 </div>
               </div>
 
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <div class="col-sm-12">
                   <button class="btn btn-primary btn-block btn-flat" disabled>Tembusan</button>
                 </div>
@@ -322,7 +322,7 @@ function load_data_temp()
                 </div>
               </div>
 	   
-	   
+	    -->
      
         <div class="card-footer text-left">
         <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
